@@ -13,11 +13,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Publish Docker
-        uses: elgohr/Publish-Docker-Github-Action@2.22
-        with:
-          # The name of the image you would like to push
-          name: docker.pkg.github.com/ychot7/go-grpc/gogrpc:latest
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v1.1.1
+        with:    
           # The login username for the registry
           username: ${{secrets.DOCKER_USERNAME}}
           # The login password for the registry
