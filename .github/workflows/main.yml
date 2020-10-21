@@ -13,9 +13,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Run a multi-line script
-        run: |
-          go env -w GOPRIVATE="github.com"
-          git config --global url."https://github.com".insteadOf "https://github.com"
-          go env
-          git config --list
+      - name: Publish Docker
+        uses: elgohr/Publish-Docker-Github-Action@2.22
+        with:
+          # The name of the image you would like to push
+          name: ychot7/go-grpc
+          # The login username for the registry
+          username: ${{secrets.DOCKER_USERNAME}}
+          # The login password for the registry
+          password: ${{secrets.DOCKER_PASSWORD}}
