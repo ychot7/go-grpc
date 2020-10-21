@@ -20,3 +20,4 @@ jobs:
           username: ${{secrets.DOCKER_USERNAME}}
           # The login password for the registry
           password: ${{secrets.DOCKER_PASSWORD}}
+          registry: docker.pkg.github.com/ychot7/go-grpc/gogrpc:latest
