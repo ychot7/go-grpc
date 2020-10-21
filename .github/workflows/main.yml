@@ -17,7 +17,7 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@2.22
         with:
           # The name of the image you would like to push
-          name: https://github.com/ychot7?tab=packages&repo_name=go-grpc
+          name: docker.pkg.github.com/ychot7/go-grpc/gogrpc:latest
           # The login username for the registry
           username: ${{secrets.DOCKER_USERNAME}}
           # The login password for the registry
